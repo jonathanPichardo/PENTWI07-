@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { ViewsRoutingModule } from './views-routing.module';
 
@@ -13,7 +15,7 @@ import {
 
 @NgModule({
     imports: [
-        CommonModule,
+        SharedModule,
         ViewsRoutingModule
     ],
     declarations: [
@@ -21,6 +23,7 @@ import {
         ListDetailsComponent,
         ListItemComponent,
         ListSummaryComponent
-    ]
+    ],
+    exports: [RouterModule]
 })
 export class ViewsModule {}

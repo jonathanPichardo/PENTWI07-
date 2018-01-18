@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../../../core/store/state.service';
 
 @Component({
   selector: 'app-lists-overview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListsOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly stateService: StateService) { }
 
   ngOnInit() {
   }
