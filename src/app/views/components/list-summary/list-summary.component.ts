@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { TodoList } from '../../../core';
 
 @Component({
   selector: 'app-list-summary',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListSummaryComponent implements OnInit {
 
+  @Input()
+  public list: TodoList;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.list);
   }
 
 }

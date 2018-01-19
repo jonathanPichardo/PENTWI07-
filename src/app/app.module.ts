@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CoreModule,
-    SharedModule,
+    SharedModule.forRoot(),
     ViewsModule
   ],
   bootstrap: [AppComponent]

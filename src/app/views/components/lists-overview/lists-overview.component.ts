@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../../../core';
+import { StateService, TodoList } from '../../../core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-lists-overview',
-  templateUrl: './lists-overview.component.html',
-  styleUrls: ['./lists-overview.component.css']
+    selector: 'app-lists-overview',
+    templateUrl: './lists-overview.component.html',
+    styleUrls: ['./lists-overview.component.css']
 })
 export class ListsOverviewComponent implements OnInit {
 
-  constructor(private readonly stateService: StateService) { }
+    public lists$: Observable < TodoList[] > ;
 
-  ngOnInit() {
-  }
+    constructor(private readonly stateService: StateService) {}
+
+    ngOnInit() {
+        this.lists$ = this.stateService.lists$;
+    }
+
+    public addList() {
+        this.stateService.addList(new TodoList());
+
+    }
 
 }

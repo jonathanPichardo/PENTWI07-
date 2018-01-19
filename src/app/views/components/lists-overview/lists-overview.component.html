@@ -1,3 +1,10 @@
-<p>
-  lists-overview works!
-</p>
+<button mat-raised-button color="accent" (click)="addList()">Add List</button>
+<mat-nav-list>
+    <article mat-subheader>
+        <h3>Lists</h3>
+        <button mat-raised-button color="accent" (click)="addList()">Add List</button>
+    </article>
+    <mat-list-item *ngFor="let list of lists$ | async">
+        <app-list-summary [list]="list"></app-list-summary>
+    </mat-list-item>
+</mat-nav-list>
