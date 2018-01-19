@@ -18,8 +18,7 @@ export class ListsOverviewComponent implements OnInit {
     }
 
     public addList() {
-        this.stateService.addList(new TodoList());
-
+        this.stateService.addList(TodoList.getMockList());
     }
 
 }

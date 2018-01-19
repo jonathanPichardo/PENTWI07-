@@ -1,10 +1,8 @@
-<button mat-raised-button color="accent" (click)="addList()">Add List</button>
 <mat-nav-list>
     <article mat-subheader>
-        <h3>Lists</h3>
-        <button mat-raised-button color="accent" (click)="addList()">Add List</button>
+        <button mat-button color="primary" (click)="addList()">Add List</button>
     </article>
-    <mat-list-item *ngFor="let list of lists$ | async">
+    <a mat-list-item *ngFor="let list of lists$ | async" [routerLink]="list.id">
         <app-list-summary [list]="list"></app-list-summary>
-    </mat-list-item>
+    </a>
 </mat-nav-list>
