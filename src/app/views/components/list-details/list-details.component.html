@@ -1,3 +1,12 @@
-<p>
-  list-details works!
-</p>
+<mat-nav-list>
+    <article mat-subheader>
+        <form class="full-width" (submit)="addTask($event)">
+            <mat-form-field >
+                <input matInput placeholder="Task" name="taskDescription" [(ngModel)]="newTaskDescription">
+            </mat-form-field>
+        </form>
+    </article>
+    <mat-list-item *ngFor="let list of (list$ | async).items ; index as i" (click)="removeTask(i)">
+        <app-list-item></app-list-item>
+    </mat-list-item>
+</mat-nav-list>

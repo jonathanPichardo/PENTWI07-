@@ -11,8 +11,9 @@ export class TodoList {
     public static getMockList(): TodoList {
         return {
             id: 0,
-            name: 'New List',
-            items: []
+            name: `New List`,
+            items: [],
+            finishedItems: 0
         };
     }
 

@@ -5,14 +5,16 @@ import {
     ListsOverviewComponent,
     ListDetailsComponent
 } from './components';
+import { ListExistsService } from './guards/list-exists.service';
 
 const routes: Routes = [
-    { path: '', component: ListsOverviewComponent, pathMatch: 'full' },
-    { path: ':id', component: ListDetailsComponent, pathMatch: 'full' }
+  { path: ':id', component: ListDetailsComponent, pathMatch: 'full', canActivate: [ListExistsService]  },
+  { path: '**', component: ListsOverviewComponent }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [ListExistsService]
 })
 export class ViewsRoutingModule {}
