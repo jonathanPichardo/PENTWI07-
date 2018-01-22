@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TodoItem } from '../../../core/models/todo-item';
 
 @Component({
-  selector: 'app-list-item',
-  templateUrl: './list-item.component.html',
-  styleUrls: ['./list-item.component.css']
+    selector: 'app-list-item',
+    templateUrl: './list-item.component.html',
+    styleUrls: ['./list-item.component.css']
 })
 export class ListItemComponent implements OnInit {
 
-  constructor() { }
+    @Input()
+    public item: TodoItem;
 
-  ngOnInit() {
-  }
+    constructor() {}
+
+    ngOnInit() {}
 
 }

@@ -6,7 +6,7 @@
             </mat-form-field>
         </form>
     </article>
-    <mat-list-item *ngFor="let list of (list$ | async).items ; index as i" (click)="removeTask(i)">
-        <app-list-item></app-list-item>
+    <mat-list-item *ngFor="let item of (list$ | async).items ; index as i" (click)="removeTask(i)">
+        <app-list-item [item]="item"></app-list-item>
     </mat-list-item>
 </mat-nav-list>
