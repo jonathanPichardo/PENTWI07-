@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class ListsOverviewComponent implements OnInit {
 
     public lists$: Observable < TodoList[] > ;
+    public newListName: string;
 
     constructor(private readonly stateService: StateService) {}
 
@@ -17,8 +18,15 @@ export class ListsOverviewComponent implements OnInit {
         this.lists$ = this.stateService.lists$;
     }
 
-    public addList() {
-        this.stateService.addList(TodoList.getMockList());
+    public addList($event) {
+        const list = TodoList.getMockList();
+        list.name = this.newListName;
+
+        this.stateService.addList(list);
+
+        this.newListName = '';
+
+        $event.preventDefault();
     }
 
 }

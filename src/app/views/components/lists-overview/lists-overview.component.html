@@ -1,6 +1,10 @@
 <mat-nav-list>
     <article mat-subheader>
-        <button mat-button color="primary" (click)="addList()">Add List</button>
+        <form class="full-width" (submit)="addList($event)">
+            <mat-form-field>
+                <input matInput placeholder="List" name="listName" [(ngModel)]="newListName">
+            </mat-form-field>
+        </form>
     </article>
     <a mat-list-item *ngFor="let list of lists$ | async" [routerLink]="list.id">
         <app-list-summary [list]="list"></app-list-summary>

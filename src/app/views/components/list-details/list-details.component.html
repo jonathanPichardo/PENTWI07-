@@ -1,7 +1,9 @@
+<h3>{{(list$|async).name}}</h3>
+
 <mat-nav-list>
     <article mat-subheader>
         <form class="full-width" (submit)="addTask($event)">
-            <mat-form-field >
+            <mat-form-field>
                 <input matInput placeholder="Task" name="taskDescription" [(ngModel)]="newTaskDescription">
             </mat-form-field>
         </form>
